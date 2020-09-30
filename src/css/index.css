@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Squealer';
+    src: url(/assets/fonts/squealer.ttf);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+
+    --size: 300px;
+}
+
+.cover {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    z-index: 1;
+    background-color: #111;
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.25),
+        inset -15px -15px 20px #000,
+        inset 15px 15px 20px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cover h2 {
+    color: white;
+    font-family: 'Squealer';
+    letter-spacing: 5px;
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.cover p {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.vinyl {
+    transition: all 1s linear;
+    position: relative;
+    width: calc(var(--size) * 0.9);
+    height: calc(var(--size) * 0.9);
+    border-radius: 50%;
+    background-image:
+        linear-gradient(to bottom right, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%),
+        radial-gradient(circle, white 3%, red 3% 25%, black 25%);
+}
+
+.cover:hover + .vinyl {
+    transform: translateX(150px) rotate(360deg);
+}
