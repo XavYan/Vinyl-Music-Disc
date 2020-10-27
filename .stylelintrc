@@ -1,6 +1,7 @@
 {
     "extends": "stylelint-config-standard",
     "rules": {
+        "selector-nested-pattern": "^&",
         "indentation": 4
     }
 }
